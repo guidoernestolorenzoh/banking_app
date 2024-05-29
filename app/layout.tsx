@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Titanium Bank",
   description: "Titanium Bank is a modern banking platform for everyone.",
   icons:{
-    icon: '/icons/logo.svg',
+    icon: '/icons/titanium_logo.png',
   }
 };
 
