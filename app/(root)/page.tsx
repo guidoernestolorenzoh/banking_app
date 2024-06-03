@@ -1,18 +1,19 @@
 import HeaderBox from '@/components/ui/HeaderBox'
 import RightSidebar from '@/components/ui/RightSidebar';
 import TotalBalanceBox from '@/components/ui/TotalBalanceBox';
+import { getLoggedInUser } from '@/lib/actions/user.actions';
 import React from 'react'
 
-const Home = () => {
-  const loggedIn = {firstName: 'Adrian', lastName: 'Brown', email: 'master@gmail.com'};
+const Home = async () => {
+  const loggedIn = await getLoggedInUser();  
   return (
     <section className='home'>
       <div className='home-content'>
         <header className='home-header'>
           <HeaderBox 
             type='greeting'
-            title='Titanium Bank'
-            user={loggedIn?.firstName || 'Guest'}
+            title='Welcome'
+            user={loggedIn?.name?.split(' ')[0] || 'Guest'}
             subtext='Access and manage your account and transactions efficiently.'
           />
 
